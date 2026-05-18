@@ -1,15 +1,70 @@
 package models;
 
 public class Cageot {
-    //Constante 
+    // Constante
+    public static final int MAX_BOUTEILLE = 12;
+    // Attribut
+    private int capacite;
+    private String identifiant;
+    private Bouteille[] tabbouteille;
+    private Bouteille bouteille;
 
-    //Attribut
+    // Constructeur
+    public Cageot(String indentifiant) {
+        this.capacite = MAX_BOUTEILLE;
+        this.identifiant = identifiant;
+        this.tabbouteille = new Bouteille[capacite];
+    }
 
-    //Constructeur
+    // Methodes
+    public Bouteille[] rangerBouteille() {
+        for (int i = 0; i < tabbouteille.length; i++) {
+            if (tabbouteille[i] == null) {
+                tabbouteille[i] = bouteille;
+                break;
+            }
 
-    //Methodes
+        }
+        return tabbouteille;
+    }
 
-    //Getters et setters
+    public Bouteille[] prendreBouteilles() {
+        for (int i = 0; i < tabbouteille.length; i++) {
+            if (tabbouteille[i] != null) {
+                tabbouteille[i] = null;
+            }
+        }
+        return tabbouteille;
+    }
 
-    //ToString
+    public int nombreBouteille() {
+        int nombre = 0;
+
+        for (int i = 0; i < tabbouteille.length; i++) {
+            if (tabbouteille[i] != null) {
+                nombre++;
+            }
+
+        }
+        return nombre;
+    }
+
+    public int nombreBouteilledispo() {
+        int nombredispo = 0;
+        for (int i = 0; i < tabbouteille.length; i++) {
+            if (tabbouteille == null) {
+                nombredispo++;
+            }
+        }
+        return nombredispo;
+    }
+
+    public 
+
+
+    // Getters et setters
+    public String getIdentifiant() {
+        return identifiant;
+    }
+    // ToString
 }
